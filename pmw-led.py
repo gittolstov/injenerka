@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-from math import log10
+from math import log10, pow
 
 GPIO.setmode(GPIO.BCM)
 
@@ -18,7 +18,7 @@ pwm = GPIO.PWM(led, 200)
 pwm.start(duty)
 
 while True:
-    pwm.ChangeDutyCycle(10 ^ (duty / 50))
+    pwm.ChangeDutyCycle(duty)#pow(10, duty / 50)
     time.sleep(0.05)
 
     duty += 1
