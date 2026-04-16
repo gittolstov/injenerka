@@ -4,7 +4,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 
-leds = [24, 22, 23, 27, 17, 25, 12, 16]
+leds = [24, 22, 23, 27, 17, 25, 12, 16][::-1]
 button1 = 9
 button2 = 10
 

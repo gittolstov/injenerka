@@ -16,7 +16,11 @@ state = 0
 period = 1.0
 
 while True:
-    for led in leds:
+    for led in leds[:-1]:
+        GPIO.output(led, 1)
+        time.sleep(0.2)
+        GPIO.output(led, 0)
+    for led in leds[-1:0:-1]:
         GPIO.output(led, 1)
         time.sleep(0.2)
         GPIO.output(led, 0)
